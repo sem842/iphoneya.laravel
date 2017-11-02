@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
+use App\Device;
+use App\Service;
 use Illuminate\Http\Request;
 
 class PriceController extends Controller
@@ -13,7 +16,14 @@ class PriceController extends Controller
      */
     public function index()
     {
-        return view('prices.index');
+        return view('prices.index', [
+            //'brands' => Brand::all(),
+            //'countOfBrands' => Brand::countOfBrands(),
+            //'devices' => Device::all(),
+            //'countOfDevices' => Device::countOfDevices(),
+            'services' => Service::all(),
+            //'countOfPrices' => Service::countOfPrices(),
+        ]);
     }
 
     /**

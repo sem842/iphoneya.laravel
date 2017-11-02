@@ -10,4 +10,9 @@ class Brand extends Model
     {
         return $this->hasMany('App\Device');
     }
+
+    public static function countOfBrands()
+    {
+        return count(Brand::all());
+    }
 }

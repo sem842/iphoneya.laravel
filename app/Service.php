@@ -10,4 +10,9 @@ class Service extends Model
     {
         return $this->hasMany('App\Device');
     }
+
+    public static function countOfPrices()
+    {
+        return count(Service::all());
+    }
 }

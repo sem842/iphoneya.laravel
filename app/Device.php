@@ -15,4 +15,9 @@ class Device extends Model
     {
         return $this->hasMany('App\Service');
     }
+
+    public static function countOfDevices()
+    {
+        return count(Device::all());
+    }
 }
