@@ -11,8 +11,13 @@ class Service extends Model
         return $this->hasMany('App\Device');
     }
 
-    public static function countOfPrices()
+    public static function countOfServices()
     {
         return count(Service::all());
     }
+
+    /*public static function countOfPrices()
+    {
+        return count(Service::all());
+    }*/
 }

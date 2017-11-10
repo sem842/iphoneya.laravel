@@ -17,12 +17,12 @@ class PriceController extends Controller
     public function index()
     {
         return view('prices.index', [
-            //'brands' => Brand::all(),
-            //'countOfBrands' => Brand::countOfBrands(),
-            //'devices' => Device::all(),
-            //'countOfDevices' => Device::countOfDevices(),
             'services' => Service::all(),
-            //'countOfPrices' => Service::countOfPrices(),
+            'devices' => Device::all(),
+            'brands' => Brand::all(),
+            'countOfBrands' => Brand::countOfBrands(),
+            'countOfDevices' => Device::countOfDevices(),
+            'countOfServices' => Service::countOfServices(),
         ]);
     }
 

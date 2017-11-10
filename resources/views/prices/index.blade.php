@@ -1,5 +1,15 @@
 <?php
-var_dump($services[0]); die;
+//var_dump($services[0]->name); var_dump($services[0]->devices[0]->name); die;
+/*foreach ($services as $key => $service)
+    {
+        var_dump($service->devices);
+    }
+die;*/
+/*foreach ($devices as $key => $device)
+{
+    var_dump($device->service);
+}
+die;*/
 //var_dump($countOfDevices); die;
 //var_dump($devices); die;
 ?>
@@ -37,11 +47,25 @@ var_dump($services[0]); die;
             </tr>
             </thead>
             <tbody>
-            @foreach($services as $key => $service)
+            {{--@foreach($devices as $device)
+                <tr>
+                    <td>{{ $device->services }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            @endforeach--}}
+            {{--@foreach($services as $service)
                 <tr>
                     <td rowspan="{{ $countOfBrands }}">{{ $service->name }}</td>
-                    <td rowspan="{{ $countOfDevices }}">{{ $device->name }}</td>
+                    <td rowspan="{{ $countOfDevices }}">{{ $service->devices }}</td>
                     <td rowspan="{{ $countOfPrices }}">{{ $service->price }}</td>
+                </tr>
+            @endforeach--}}
+            @foreach($services as $service)
+                <tr rowspan="{{ $countOfDevices }}">
+                    <td>{{ $service->name }}</td>
+                    <td>{{ $service->devices[0]->name }}</td>
+                    <td>{{ $service->price }}</td>
                 </tr>
             @endforeach
             </tbody>
